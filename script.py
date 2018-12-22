@@ -34,3 +34,10 @@ def quicksort(myList, start, end):
         quicksort(myList, start, pivot-1)
         quicksort(myList, pivot+1, end)
     return myList
+
+#The function call that actually sorts through the list.
+def main():
+    myList = [7,2,5,1,29,6,4,19,11]
+    sortedList = quicksort(myList,0,len(myList)-1)
+    print(sortedList)
+    
