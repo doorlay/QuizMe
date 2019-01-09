@@ -6,4 +6,5 @@ def welcome():
 	name = input("What's your name?")
 	print("Welcome, {}! Let's begin." .format(name))
 		  
-  
+
+welcome()
