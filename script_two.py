@@ -23,3 +23,14 @@ definitions2 = definitions_list.read()
 # Set definitions to a list with the content of each line of definition.txt
 definitions = definitions2.splitlines()
 
+# Function to ensure definitions and vocab are the same length
+def length_check():
+  a = len(definitions)
+  b = len(vocab)
+  if (a != b):
+    print("The definitions and vocab lists appear to not be the same length.")
+    print("Please update the lists before you continue.")
+  else:
+    return True
+
+# Function 
