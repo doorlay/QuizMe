@@ -1,7 +1,3 @@
-# store terms in a data base via a text file
-# quizlet type of document
-
-
 # Welcome message to be displayed upon initial running of the program
 def welcome():
 	print("Welcome to the vocabulary practice!")
@@ -9,7 +5,21 @@ def welcome():
 	print("Welcome, {}! Let's begin." .format(name))
 		  
 
-# Name the database text file with the vocab, "vocab.txt"
+# Set vocab_list to the content of vocab.txt
 vocab_list = open("vocab.txt")
-vocab = vocab_list.splitlines()
+
+# Set vocab2 to the actual content of vocab.txt
+vocab2 = vocab_list.read()
+
+# Set vocab to a list with the content of each line of vocab.txt
+vocab = vocab2.splitlines()
+
+# Set definition_list to the content of definitions.txt
+definitions_list = open("definitions.txt")
+
+# Set definitions2 to the actual content of definitions.txt
+definitions2 = definitions_list.read()
+
+# Set definitions to a list with the content of each line of definition.txt
+definitions = definitions2.splitlines()
 
