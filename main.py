@@ -1,3 +1,6 @@
+# Imports the random module that allows for psuedo-random number generation
+import random
+
 # Welcome message to be displayed upon initial running of the program
 def welcome():
 	print("Welcome to the vocabulary practice!")
@@ -23,8 +26,7 @@ definitions2 = definitions_list.read()
 # Set definitions to a list with the content of each line of definition.txt
 definitions = definitions2.splitlines()
 
-# Function to ensure definitions list and vocab list are the same length
-# This makes sure that every vocab term is on the cooresponding line as its definition
+# Function to ensure definitions and vocab are the same length
 def length_check():
   a = len(definitions)
   b = len(vocab)
@@ -34,4 +36,15 @@ def length_check():
   else:
     return True
 
-# Function 
+# Algorithm for asking multiple choice questions.
+# First parameter is the position of the vocab word in the list
+def multiplechoice(n):
+  print("What is the definition of {}?" .format(vocab[n]))
+
+def freeresponse(n):
+  print("Answer me!")
+
+def start():
+  welcome()
+  length_check()
+
