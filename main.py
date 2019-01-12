@@ -23,7 +23,8 @@ definitions2 = definitions_list.read()
 # Set definitions to a list with the content of each line of definition.txt
 definitions = definitions2.splitlines()
 
-# Function to ensure definitions and vocab are the same length
+# Function to ensure definitions list and vocab list are the same length
+# This makes sure that every vocab term is on the cooresponding line as its definition
 def length_check():
   a = len(definitions)
   b = len(vocab)
