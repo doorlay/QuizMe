@@ -1,5 +1,5 @@
 # QuizMe
-This is the repository for the project that I'll be turning in for my AP Computer Science Principles test.
+QuizMe is a simple quiz program, inspired by Quizlet, that is customizable by the user to quiz them using flashcards.
 
 ---
 ## Description
