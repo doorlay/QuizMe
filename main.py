@@ -36,15 +36,27 @@ def length_check():
   else:
     return True
 
-# Algorithm for asking multiple choice questions.
-# First parameter is the position of the vocab word in the list
+# Function that generates a random number between one and four, inclusive
+def randompush():
+  randomnum = random.randint(1,4)
+  return randomnum
+
+
+# Function that asks for multiple choice questions.
 def multiplechoice(n):
-  print("What is the definition of {}?" .format(vocab[n]))
+  # Initial question for the user
+  print("Would you like to see vocab or definitions first?")
 
-def freeresponse(n):
-  print("Answer me!")
+  # Ask this so we can alternate between asking displaying vocab and definitions.
+  choice = input("Type 'vocab' or 'definitions':")
 
-def start():
-  welcome()
-  length_check()
-
+  if choice == "vocab":
+    choice_two = "definition of"
+    choice_three = vocab2.splitlines()
+  elif choice == "definitions":
+    choice_two = "vocab term for"
+    choice_three = definitions2.splitlines()
+  else:
+    print("You didn't type either. Please restart.")
+    
+  print("What is the {} {}?" .format(choice_two, choice_three[n] ))
