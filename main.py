@@ -37,26 +37,44 @@ def length_check():
     return True
 
 # Function that generates a random number between one and four, inclusive
-def randompush():
+def random_one_to_four():
   randomnum = random.randint(1,4)
   return randomnum
 
+# Function that generates a random number between entire index of vocab list
+def random_length():
+  a = len(vocab) - 1
+  randomnum = random.randint(0,a)
+  return randomnum
 
-# Function that asks for multiple choice questions.
-def multiplechoice(n):
+
+# Function that asks the multiple choice questions.
+def mcquestion(n):
   # Initial question for the user
-  print("Would you like to see vocab or definitions first?")
+  print("Would you like to answer with terms or definitions?")
 
   # Ask this so we can alternate between asking displaying vocab and definitions.
-  choice = input("Type 'vocab' or 'definitions':")
+  choice = input("Type 'terms' or 'definitions':")
 
-  if choice == "vocab":
-    choice_two = "definition of"
+
+  if choice == "terms":
+    choice_two = "What is the definition of"
     choice_three = vocab2.splitlines()
+    a = 0
   elif choice == "definitions":
-    choice_two = "vocab term for"
+    choice_two = "What is the term for"
     choice_three = definitions2.splitlines()
+    a = 1
   else:
-    print("You didn't type either. Please restart.")
-    
-  print("What is the {} {}?" .format(choice_two, choice_three[n] ))
+    choice_two = "You didn't type either."
+    choice_three = "Please restart."
+  print("{} {}?" .format(choice_two, choice_three[n] ))
+
+  # Return either 0 or 1 so we know if the user is answering terms or definitions
+  return a
+
+# Function that evaluates the answers for multiple choice questions
+def mc():
+  a = random_length()
+  b = mcquestion(a)
+
