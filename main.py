@@ -73,8 +73,35 @@ def mcquestion(n):
   # Return either 0 or 1 so we know if the user is answering terms or definitions
   return a
 
+
+# Sub-function for checking multiple choice answers
+# b = 0 for answering definitions, 1 for answering terms.
+# 'answer' is the users answer
+# a is the index of the correct answer
+def mccheck(b, answer, a):
+  if b == 0:
+    if answer == definitions[a]:
+      print("Correct!")
+    else:
+      print("Wrong!")
+  if b == 1:
+    if answer == terms[a]:
+      print("Correct!")
+    else:
+      print("Wrong!")
+
 # Function that evaluates the answers for multiple choice questions
 def mc():
   a = random_length()
   b = mcquestion(a)
+  answer = input("Answer here:")
+  mccheck(b, answer, a)
+  
 
+
+def quiz():
+  welcome()
+  length_check()
+  mc()
+
+quiz()
