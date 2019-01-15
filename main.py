@@ -60,10 +60,12 @@ def mcquestion(n):
   if choice == "definitions":
     choice_two = "What is the definition of"
     choice_three = vocab2.splitlines()
+    # We assign 0 to a, so we know that the user is answering with definitions
     a = 0
   elif choice == "terms":
     choice_two = "What is the term for"
     choice_three = definitions2.splitlines()
+    # We assign 1 to a, so we know that the user is answering with terms
     a = 1
   else:
     choice_two = "You didn't type either."
@@ -80,6 +82,8 @@ def mcquestion(n):
 # a is the index of the correct answer
 def mccheck(b, answer, a):
   if b == 0:
+
+    # .lower() method is used to make sure case sensitivity while answering is not an issue
     if answer.lower() == definitions[a].lower():
       print("Correct!")
     else:
@@ -92,16 +96,21 @@ def mccheck(b, answer, a):
 
 # Function that evaluates the answers for multiple choice questions
 def mc():
+  # a is assigned to a random number in within the index of the list of vocab/definitions
   a = random_length()
+
+  # b is assigned to either 0 or 1, depending on if the user is inputting terms or definitions
   b = mcquestion(a)
+
+  # answer is assigned to the users answers
   answer = input("Answer here:")
   mccheck(b, answer, a)
   
 
 
-def quiz():
+def quizstart():
   welcome()
   length_check()
   mc()
 
-quiz()
+quizstart()
