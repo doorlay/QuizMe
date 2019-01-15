@@ -57,11 +57,11 @@ def mcquestion(n):
   choice = input("Type 'terms' or 'definitions':")
 
 
-  if choice == "terms":
+  if choice == "definitions":
     choice_two = "What is the definition of"
     choice_three = vocab2.splitlines()
     a = 0
-  elif choice == "definitions":
+  elif choice == "terms":
     choice_two = "What is the term for"
     choice_three = definitions2.splitlines()
     a = 1
@@ -80,12 +80,12 @@ def mcquestion(n):
 # a is the index of the correct answer
 def mccheck(b, answer, a):
   if b == 0:
-    if answer == definitions[a]:
+    if answer.lower() == definitions[a].lower():
       print("Correct!")
     else:
       print("Wrong!")
   if b == 1:
-    if answer == terms[a]:
+    if answer.lower() == vocab[a].lower():
       print("Correct!")
     else:
       print("Wrong!")
