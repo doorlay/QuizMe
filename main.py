@@ -49,7 +49,7 @@ def random_length():
 
 
 # Function that asks the multiple choice questions.
-def mcquestion(n):
+def frquestion(n):
   # Initial question for the user
   print("Would you like to answer with terms or definitions?")
 
@@ -80,37 +80,75 @@ def mcquestion(n):
 # b = 0 for answering definitions, 1 for answering terms.
 # 'answer' is the users answer
 # a is the index of the correct answer
-def mccheck(b, answer, a):
+def frcheck(b, answer, a):
   if b == 0:
 
     # .lower() method is used to make sure case sensitivity while answering is not an issue
     if answer.lower() == definitions[a].lower():
       print("Correct!")
+      # Returns 1 if the answer is correct
+      return 1
     else:
       print("Wrong!")
+      # This prints out the correct answer.
+      print("The correct answer was {}." .format(definitions[a]))
+      # Returns 0 if the answer is wrong
+      return 0
   if b == 1:
     if answer.lower() == vocab[a].lower():
       print("Correct!")
+      # Returns 1 if the answer is correct
+      return 1
     else:
       print("Wrong!")
+      # This prints out the correct answer.
+      print("The correct answer was {}." .format(vocab[a]))
+      # Returns 0 if the answer is wrong
+      return 0
 
 # Function that evaluates the answers for multiple choice questions
-def mc():
+def fr():
   # a is assigned to a random number in within the index of the list of vocab/definitions
   a = random_length()
 
   # b is assigned to either 0 or 1, depending on if the user is inputting terms or definitions
-  b = mcquestion(a)
+  b = frquestion(a)
 
   # answer is assigned to the users answers
   answer = input("Answer here:")
-  mccheck(b, answer, a)
-  
+  # c is assigned to 0 if the answer is wrong
+  # c is assigned to 1 if the answer is right
+  c = frcheck(b, answer, a)
+  return c
+
+
+def streakcheck(streak):
+  # c is assigned to 0 if answer is wrong, 1 if answer is right
+  c = fr()
+  if c == 0:
+    print("You have a streak of 0.")
+    return 0
+    streak = 0
+  else:
+    streak += 1
+    print("You have a streak of {}." .format(streak))
+    return streak
 
 
 def quizstart():
   welcome()
   length_check()
-  mc()
+  
+def quiz():
+  # This function sends the welcome message and ensures that the length of vocab and definitions are equal
+  quizstart()
 
-quizstart()
+  # c is assigned to the length of the vocab list, multiplied by two. This value is to be passed into the for loop, to determine the amount of questions to be asked.
+  c = len(vocab) * 2
+
+  # 
+  b = streakcheck(0)
+  for x in range(1,c):
+    streakcheck(b)
+
+quiz()
