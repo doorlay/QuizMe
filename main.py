@@ -146,7 +146,7 @@ def quiz():
   # c is assigned to the length of the vocab list, multiplied by two. This value is to be passed into the for loop, to determine the amount of questions to be asked.
   c = len(vocab) * 2
 
-  # 
+  # b is assigned to either 0 or 1, depending on if answering is wrong or right, respectively
   b = streakcheck(0)
   for x in range(1,c):
     streakcheck(b)
