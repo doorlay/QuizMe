@@ -9,7 +9,7 @@ def welcome():
 		  
 
 # Set vocab_list to the content of vocab.txt
-vocab_list = open("vocab.txt")
+vocab_list = open("DOCUMENTS/vocab.txt")
 
 # Set vocab2 to the actual content of vocab.txt
 vocab2 = vocab_list.read()
@@ -18,7 +18,7 @@ vocab2 = vocab_list.read()
 vocab = vocab2.splitlines()
 
 # Set definition_list to the content of definitions.txt
-definitions_list = open("definitions.txt")
+definitions_list = open("DOCUMENTS/definitions.txt")
 
 # Set definitions2 to the actual content of definitions.txt
 definitions2 = definitions_list.read()
