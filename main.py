@@ -122,19 +122,6 @@ def fr():
   return c
 
 
-def streakcheck(streak):
-  # c is assigned to 0 if answer is wrong, 1 if answer is right
-  c = fr()
-  if c == 0:
-    print("You have a streak of 0.")
-    return 0
-    streak = 0
-  else:
-    streak += 1
-    print("You have a streak of {}." .format(streak))
-    return streak
-
-
 def quizstart():
   welcome()
   length_check()
@@ -147,8 +134,8 @@ def quiz():
   c = len(vocab) * 2
 
   # b is assigned to either 0 or 1, depending on if answering is wrong or right, respectively
-  b = streakcheck(0)
   for x in range(1,c):
-    streakcheck(b)
+    fr()
+
 
 quiz()
